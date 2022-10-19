@@ -94,20 +94,28 @@
       <button class="waterButton" onclick="buyWater(0)">+2<br>water<br><br>Cost:<br>100,000<br>fire</button>
       <button class="waterButton" onclick="buyWater(1)">+5<br>water<br><br>Cost:<br>700,000<br>fire</button>
       <button class="waterButton" onclick="buyWater(2)">+15<br>water<br><br>Cost:<br>6,000,000<br>fire</button>
+      <button class="waterButton" onclick="buyWater(3)">+100<br>water<br><br>Cost:<br>1e9<br>fire</button>
     </div>
     <div id="upgradeDiv">
-      <button class="upgradeButton" style="background-color: #d090f0" onclick="buyUpgrade(0)">Unlock rebirth buttons<br>Costs $1.00e10</button>
-      <button class="upgradeButton" onclick="buyUpgrade(1)">Gain more buttons<br>Costs $1.00e15</button>
-      <button class="upgradeButton" onclick="buyUpgrade(2)">Money gain is increased<br>Costs $1.00e20</button>
-      <button class="upgradeButton" style="background-color: #60d060" onclick="buyUpgrade(3)">Unlock prestige buttons<br>Costs $1.00e25</button>
-      <button class="upgradeButton" onclick="buyUpgrade(4)">Gain more buttons<br>Costs $1.00e29</button>
-      <button class="upgradeButton" onclick="buyUpgrade(5)">Rebirth gain is increased<br>Costs $1.00e35</button>
-      <button class="upgradeButton" style="background-color: #e0b060" onclick="buyUpgrade(6)">Unlock fire buttons and some new upgrades<br>Costs $1.00e42</button>
-      <button class="upgradeButton" style="display: none;" onclick="buyUpgrade(7)">Money and multi gain are increased<br>Costs 1 fire</button>
-      <button class="upgradeButton" style="display: none;" onclick="buyUpgrade(8)">Gain more buttons<br>Costs $5.00e45</button>
-      <button class="upgradeButton" style="display: none;" onclick="buyUpgrade(9)">Rebirth gain is increased<br>Costs $1.00e51</button>
-      <button class="upgradeButton" style="display: none;" onclick="buyUpgrade(10)">Prestige gain is increased<br>Costs $1.00e59</button>
-      <button class="upgradeButton" style="display: none; background-color: #60a0e0" onclick="buyUpgrade(11)">Unlock water buttons<br>Costs $1.00e66</button>
+        <button class="upgradeButton" style="background-color: #d090f0" onclick="buyUpgrade(0)">Unlock rebirth buttons<br>Costs $1.00e10</button>
+        <button class="upgradeButton" onclick="buyUpgrade(1)">Gain more buttons<br>Costs $1.00e15</button>
+        <button class="upgradeButton" onclick="buyUpgrade(2)">Money gain is increased<br>Costs $1.00e20</button>
+        <button class="upgradeButton" style="background-color: #60d060" onclick="buyUpgrade(3)">Unlock prestige buttons<br>Costs $1.00e25</button>
+        <button class="upgradeButton" onclick="buyUpgrade(4)">Gain more buttons<br>Costs $1.00e29</button>
+        <button class="upgradeButton" onclick="buyUpgrade(5)">Rebirth gain is increased<br>Costs $1.00e35</button>
+        <button class="upgradeButton" style="background-color: #e0b060" onclick="buyUpgrade(6)">Unlock fire buttons and some new upgrades<br>Costs $1.00e42</button>
+        <button class="upgradeButton" style="display: none;" onclick="buyUpgrade(7)">Money and multi gain are increased<br>Costs 1 fire</button>
+        <button class="upgradeButton" style="display: none;" onclick="buyUpgrade(8)">Gain more buttons<br>Costs $5.00e45</button>
+        <button class="upgradeButton" style="display: none;" onclick="buyUpgrade(9)">Rebirth gain is increased<br>Costs $1.00e51</button>
+        <button class="upgradeButton" style="display: none;" onclick="buyUpgrade(10)">Prestige gain is increased<br>Costs $1.00e59</button>
+        <button class="upgradeButton" style="display: none; background-color: #60a0e0" onclick="buyUpgrade(11)">Unlock water buttons and some new upgrades<br>Costs $1.00e66</button>
+        <button class="upgradeButton" style="display: none;" onclick="buyUpgrade(12)">Start each fire with 10 rebirths<br>Costs 100 Water</button>
+        <button class="upgradeButton" style="display: none;" onclick="buyUpgrade(13)">Start each prestige with 100 multi<br>Costs 1e10 Fire</button>
+        <button class="upgradeButton" style="display: none;" onclick="buyUpgrade(14)">Gain more buttons<br>Costs $???</button>
+        <button class="upgradeButton" style="display: none; background-color: #f0e090" onclick="buyUpgrade(15)">Unlock light buttons<br>Costs $???</button>
+        <button class="upgradeButton" style="display: none;" onclick="buyUpgrade(16)">Start each water with 10 prestige<br>Costs ??? Light</button>
+        <button class="upgradeButton" style="display: none;" onclick="buyUpgrade(17)">Start each rebirth with 100,000 money<br>Costs ??? Prestiges</button>
+        <button class="upgradeButton" style="display: none; background-color: #702070" onclick="buyUpgrade(18)">Unlock darkness buttons and some new upgrades<br>Costs $???</button>
     </div>
     <div id="optionsDiv">
       <h1>Options</h1>
@@ -118,7 +126,7 @@
         <button style="background-color: #ffb0b0" onclick="hardReset()">Hard Reset</button>
       </center>
     </div>
-    <p id="versionText">Absolute Button Simulator v0.3</p>
+    <p id="versionText">Absolute Button Simulator v0.4 Beta</p>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="OmegaNum.js"></script>
     <script src="format-omeganum.js"></script>
