@@ -139,7 +139,16 @@ function loadGame(loadgame) {
         document.getElementsByClassName("resourceText")[3].style.display = "inline-block"
     }
     if (game.upgradesBought[12] == true) {
-        document.getElementsByClassName("upgradeButton")[10].style.display = "none"
+        document.getElementsByClassName("upgradeButton")[12].style.display = "none"
+    }
+    if (game.upgradesBought[13] == true) {
+        document.getElementsByClassName("upgradeButton")[13].style.display = "none"
+    }
+    if (game.upgradesBought[14] == true) {
+        document.getElementsByClassName("upgradeButton")[14].style.display = "none"
+        for (i = 0; i < rebirthCosts.length; i++) {
+            rebirthCosts[i] /= 10
+        }
     }
 
     update()
@@ -217,21 +226,21 @@ function buyRebirths(x) {
 
 function buyPrestiges(x) {
     if (game.rebirths.gte(prestigeCosts[x])) {
-        game.money = OmegaNum(0)
-        game.multiplier = OmegaNum(1)
-        game.rebirths = OmegaNum(0)
         game.prestiges = game.prestiges.add(OmegaNum(prestigeBoosts[x]).mul(game.fire.add(1)).mul(game.prestigePermaMult))
+        game.money = OmegaNum(0)
+        game.multiplier = OmegaNum(1).add(game.prestiges.cbrt() * (game.upgradesBought[13] == true))
+        game.rebirths = OmegaNum(0)
         update()
     }
 }
 
 function buyFire(x) {
     if (game.prestiges.gte(fireCosts[x])) {
+        game.fire = game.fire.add(OmegaNum(fireBoosts[x]).mul(game.water.add(1)))
         game.money = OmegaNum(0)
         game.multiplier = OmegaNum(1)
-        game.rebirths = OmegaNum(0).add((game.upgradesBought[12] == true) * 10)
+        game.rebirths = OmegaNum(0).add(game.fire.sqrt() * (game.upgradesBought[12] == true))
         game.prestiges = OmegaNum(0)
-        game.fire = game.fire.add(OmegaNum(fireBoosts[x]).mul(game.water.add(1)))
         update()
     }
 }
@@ -260,7 +269,12 @@ function buyUpgrade(x) {
         document.getElementsByClassName("upgradeButton")[12].style.display = "none"
         game.water = game.water.sub(100)
         game.upgradesBought[12] = true
-	}
+    }
+    else if (x == 13 && game.fire.gte(1e10) && game.upgradesBought[13] != true) {
+        document.getElementsByClassName("upgradeButton")[13].style.display = "none"
+        game.fire = game.fire.sub(1e10)
+        game.upgradesBought[13] = true
+    }
     else if (game.money.gte(upgradeCosts[x]) && game.upgradesBought[x] != true) {
         game.money = game.money.sub(upgradeCosts[x])
         document.getElementsByClassName("upgradeButton")[x].style.display = "none"
@@ -319,6 +333,11 @@ function buyUpgrade(x) {
             document.getElementsByClassName("upgradeButton")[16].style.display = "inline-block"
             document.getElementsByClassName("upgradeButton")[17].style.display = "inline-block"
             document.getElementsByClassName("upgradeButton")[18].style.display = "inline-block"
+        }
+        else if (x == 14) {
+            for (i = 0; i < rebirthCosts.length; i++) {
+                rebirthCosts[i] /= 10
+			}
         }
         update()
     }
